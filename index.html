@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyResume AI | Resume Builder</title>
+  <meta name="description" content="Build your professional resume for free.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">MyResume <span>AI</span></div>
+  <div class="header-actions">
+    <button id="resetBtn">Reset</button>
+    <button class="primary" id="downloadBtn">Download PDF</button>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Build your resume</h2>
+      <span class="help">Auto-saves</span>
+    </div>
+
+    <div class="panel-body">
+      <div class="tabs">
+        <button class="active" data-template="1">Template 1</button>
+        <button data-template="2">Template 2</button>
+        <button data-template="3">Template 3</button>
+      </div>
+
+      <p class="help">Fill in your details and preview your resume.</p>
+
+      <div class="section-title">Personal Information</div>
+
+      <div class="form-grid">
+        <div class="field full">
+          <label>Full Name</label>
+          <input id="name" placeholder="Your Name">
+        </div>
+
+        <div class="field full">
+          <label>Professional Title</label>
+          <input id="role" placeholder="Marketing Assistant">
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <input id="email" placeholder="your@email.com">
+        </div>
+
+        <div class="field">
+          <label>Phone</label>
+          <input id="phone" placeholder="+91 9876543210">
+        </div>
+
+        <div class="field full">
+          <label>Location</label>
+          <input id="location" placeholder="Ahmedabad, India">
+        </div>
+
+        <div class="field full">
+          <label>LinkedIn / Portfolio</label>
+          <input id="website" placeholder="linkedin.com/in/yourname">
+        </div>
+      </div>
+
+      <div class="section-title">Professional Summary</div>
+
+      <div class="field">
+        <label>About You</label>
+        <textarea id="summary" placeholder="Write a short professional summary"></textarea>
+      </div>
+
+      <div class="section-title">Work Experience</div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label>Job Title</label>
+          <input id="jobTitle" placeholder="Sales Associate">
+        </div>
+
+        <div class="field">
+          <label>Company</label>
+          <input id="company" placeholder="ABC Company">
+        </div>
+
+        <div class="field">
+          <label>Dates</label>
+          <input id="jobDates" placeholder="2023 - 2025">
+        </div>
+
+        <div class="field">
+          <label>Location</label>
+          <input id="jobLocation" placeholder="Ahmedabad">
+        </div>
+
+        <div class="field full">
+          <label>Responsibilities (one per line)</label>
+          <textarea id="jobDetails"></textarea>
+        </div>
+      </div>
+
+      <div class="section-title">Education</div>
+
+      <div class="form-grid">
+        <div class="field full">
+          <label>Degree / Qualification</label>
+          <input id="degree" placeholder="Bachelor of Commerce">
+        </div>
+
+        <div class="field">
+          <label>School / College</label>
+          <input id="school" placeholder="ABC College">
+        </div>
+
+        <div class="field">
+          <label>Dates</label>
+          <input id="eduDates" placeholder="2021 - 2024">
+        </div>
+      </div>
+
+      <div class="section-title">Skills & Extras</div>
+
+      <div class="field">
+        <label>Skills (comma separated)</label>
+        <textarea id="skills"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Languages</label>
+        <input id="languages" placeholder="English, Hindi">
+      </div>
+
+      <div class="field">
+        <label>Projects / Certifications</label>
+        <textarea id="projects"></textarea>
+      </div>
+
+      <button id="clearBtn">Clear Form</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Live Preview</h2>
+      <span class="help">A4 Resume</span>
+    </div>
+
+    <div class="preview-wrap" id="previewWrap">
+      <div class="resume" id="resumePreview"></div>
+    </div>
+  </section>
+</main>
+
+<footer>MyResume AI | Free Resume Builder</footer>
+
+<script src="script.js"></script>
+</body>
+  </html>
