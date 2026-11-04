@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --primary: #222222;
-  --primary-hover: #444444;
-  --background: #f3f3f3;
-  --surface: #ffffff;
-  --text: #171717;
-  --muted: #777777;
-  --border: #e2e2e2;
+  --bg: #080c14;
+  --surface: #101827;
+  --card: #141f30;
+  --primary: #233f70;
+  --primary-hover: #31558d;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #263449;
 }
 
 * {
@@ -19,51 +20,25 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--background);
+  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
 
 header, nav {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background: #0b1220;
+  border-bottom: 1px solid var(--border);
   padding: 20px 5%;
 }
 
 h1, h2, h3 {
+  color: #f8fafc;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
-button {
-  background: #222;
-  color: #fff;
-  border: none;
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background: #444;
-}
-
-input, textarea, select {
-  width: 100%;
-  background: #fff;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  padding: 13px;
-  margin: 7px 0 16px;
-  outline: none;
-  color: #222;
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: #777;
-  box-shadow: 0 0 0 3px #eeeeee;
+p {
+  color: var(--muted);
 }
 
 .container, main {
@@ -76,26 +51,87 @@ input:focus, textarea:focus, select:focus {
   display: grid;
   grid-template-columns: 380px 1fr;
   gap: 25px;
+  align-items: start;
 }
 
 .form-section, .editor, .form-container {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
   padding: 25px;
 }
 
 .resume-preview, .preview, #resumePreview {
   background: #fff;
+  color: #171717;
   min-height: 800px;
   padding: 45px;
-  border: 1px solid #dedede;
   border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
 }
 
-p {
-  color: #777;
+.resume-preview h1,
+.resume-preview h2,
+.resume-preview h3,
+#resumePreview h1,
+#resumePreview h2,
+#resumePreview h3 {
+  color: #111827;
+}
+
+button, .btn, .primary-btn {
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid #34527d;
+  border-radius: 9px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+input, textarea, select {
+  width: 100%;
+  background: #0b1220;
+  color: #f1f5f9;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 7px 0 16px;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #416ba8;
+  box-shadow: 0 0 0 3px rgba(49,85,141,0.2);
+}
+
+label {
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.template-card, .template {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 15px;
+  transition: 0.2s;
+}
+
+.template-card:hover, .template:hover {
+  border-color: #416ba8;
+}
+
+.template.active, .template-card.active {
+  border: 2px solid #416ba8;
+  background: #172740;
 }
 
 .section {
@@ -103,39 +139,27 @@ p {
 }
 
 .section h3 {
-  border-bottom: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d1d5db;
   padding-bottom: 8px;
   margin-bottom: 12px;
-}
-
-.template-card, .template {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
-}
-
-.template-card:hover, .template:hover {
-  border-color: #555;
-}
-
-.template.active, .template-card.active {
-  border: 2px solid #222;
-  background: #f5f5f5;
 }
 
 @media (max-width: 900px) {
   .app, .main-layout {
     grid-template-columns: 1fr;
   }
+
+  .resume-preview, #resumePreview {
+    padding: 25px;
+  }
 }
 
 @media print {
   body {
-    background: #fff;
+    background: white;
   }
 
-  button, nav, header, .editor, .form-section {
+  header, nav, button, .editor, .form-section {
     display: none !important;
   }
 
@@ -143,4 +167,4 @@ p {
     border: none;
     box-shadow: none;
   }
-}
+  }
